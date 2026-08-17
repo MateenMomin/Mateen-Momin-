@@ -867,6 +867,19 @@
 .certificate-view-btn{cursor:pointer;}
 @media(max-width:900px){.cert-grid{grid-template-columns:1fr 1fr;}}
 @media(max-width:600px){.cert-grid{grid-template-columns:1fr;}}
+
+  /* ---------- CERTIFICATE LAYOUT / FAST EXTERNAL ASSETS ---------- */
+  .cert-grid-full{grid-template-columns:repeat(3,minmax(0,1fr));width:100%;}
+  .cert-card{display:flex;flex-direction:column;min-height:470px;}
+  .cert-visual{height:170px;margin:-22px -22px 22px;overflow:hidden;border-bottom:1px solid var(--line);background:#11152b;display:flex;align-items:center;justify-content:center;}
+  .cert-visual img{width:100%;height:100%;object-fit:cover;object-position:center;display:block;}
+  .cert-pdf{flex-direction:column;gap:6px;color:var(--accent);font-family:'IBM Plex Mono',monospace;}
+  .cert-pdf span{font-size:34px;font-weight:700;letter-spacing:.08em;}
+  .cert-pdf small{font-size:11px;color:var(--ink-dim);text-transform:uppercase;letter-spacing:.1em;}
+  .cert-card .btn{margin-top:auto;width:100%;}
+  .cert-card p{min-height:52px;}
+  @media(max-width:900px){.cert-grid-full{grid-template-columns:1fr 1fr;}}
+  @media(max-width:600px){.cert-grid-full{grid-template-columns:1fr;}.cert-card{min-height:0;}}
 </style>
 </head>
 <body>
@@ -897,7 +910,7 @@
       </p>
       <div class="hero-cta">
         <a class="btn btn-primary" href="#projects">View projects</a>
-        <a class="btn btn-ghost magnetic" href="mailto:mateenmomin7840@gmail.com?subject=Portfolio%20Contact">Email Me ↗</a>
+        <a class="btn btn-ghost magnetic" href="https://mail.google.com/mail/?view=cm&fs=1&to=mateenmomin7840@gmail.com&su=Portfolio%20Contact" target="_blank" rel="noopener noreferrer">Email Me ↗</a>
         <a class="btn btn-ghost magnetic" id="downloadCvHero" href="Mateen Resume.pdf" download="Mateen Resume.pdf" aria-label="Download CV">Download CV ↓</a>
       </div>
     </div>
@@ -910,7 +923,6 @@
         <div class="fact-chip"><span class="fact-label">location</span><span class="fact-value">Pune, IN</span></div>
         <div class="fact-chip"><span class="fact-label">status</span><span class="fact-value"><span class="dot-live"></span>Open to work</span></div>
         <div class="fact-chip full"><span class="fact-label">skills</span><span class="fact-value">SQL · Python · Power BI · Data Modeling</span></div>
-      </div>
     </div>
   </section>
 
@@ -1145,30 +1157,38 @@
       <p class="eyebrow">05 · credentials</p>
       <h2>Certifications &amp; education</h2>
     </div>
-    <div class="split">
-      <div class="cert-grid">
-        <article class="cert-card magnetic-card">
-          <div class="cert-card-top"><span class="cert-icon">⌘</span><span class="cert-provider">HackerRank</span></div>
-          <h3>SQL (Basic)</h3>
-          <p>Foundational SQL certification.</p>
-          <button class="btn btn-ghost certificate-view-btn" type="button" data-certificate="sql_basic certificate.pdf" data-cert-alt="HackerRank SQL Basic Certificate">View Certificate ↗</button>
-        </article>
+    <div class="cert-grid cert-grid-full">
+      <article class="cert-card magnetic-card">
+        <div class="cert-visual cert-pdf">
+          <span>PDF</span>
+          <small>HackerRank Certificate</small>
+        </div>
+        <div class="cert-card-top"><span class="cert-icon">⌘</span><span class="cert-provider">HackerRank</span></div>
+        <h3>SQL (Basic)</h3>
+        <p>Foundational SQL certification.</p>
+        <button class="btn btn-ghost certificate-view-btn" type="button" data-certificate="sql_basic certificate.pdf" data-cert-type="pdf" data-cert-alt="HackerRank SQL Basic Certificate">View Certificate ↗</button>
+      </article>
 
-        <article class="cert-card magnetic-card">
-          <div class="cert-card-top"><span class="cert-icon">⌘</span><span class="cert-provider">HackerRank</span></div>
-          <h3>SQL (Intermediate)</h3>
-          <p>Intermediate SQL certification.</p>
-          <button class="btn btn-ghost certificate-view-btn" type="button" data-certificate="sql intermidiate.png" data-cert-alt="HackerRank SQL Intermediate Certificate">View Certificate ↗</button>
-        </article>
+      <article class="cert-card magnetic-card">
+        <div class="cert-visual">
+          <img src="sql intermidiate.png" loading="lazy" decoding="async" alt="HackerRank SQL Intermediate certificate">
+        </div>
+        <div class="cert-card-top"><span class="cert-icon">⌘</span><span class="cert-provider">HackerRank</span></div>
+        <h3>SQL (Intermediate)</h3>
+        <p>Intermediate SQL certification.</p>
+        <button class="btn btn-ghost certificate-view-btn" type="button" data-certificate="sql intermidiate.png" data-cert-type="image" data-cert-alt="HackerRank SQL Intermediate Certificate">View Certificate ↗</button>
+      </article>
 
-        <article class="cert-card magnetic-card">
-          <div class="cert-card-top"><span class="cert-icon">⌘</span><span class="cert-provider">HackerRank</span></div>
-          <h3>Python (Basic)</h3>
-          <p>Foundational Python certification.</p>
-          <button class="btn btn-ghost certificate-view-btn" type="button" data-certificate="python.png" data-cert-alt="HackerRank Python Basic Certificate">View Certificate ↗</button>
-        </article>
-      </div>
-      <div class="edu-card">
+      <article class="cert-card magnetic-card">
+        <div class="cert-visual">
+          <img src="python.png" loading="lazy" decoding="async" alt="HackerRank Python Basic certificate">
+        </div>
+        <div class="cert-card-top"><span class="cert-icon">⌘</span><span class="cert-provider">HackerRank</span></div>
+        <h3>Python (Basic)</h3>
+        <p>Foundational Python certification.</p>
+        <button class="btn btn-ghost certificate-view-btn" type="button" data-certificate="python.png" data-cert-type="image" data-cert-alt="HackerRank Python Basic Certificate">View Certificate ↗</button>
+      </article>
+    <div class="edu-card">
         <h3>Bachelor of Engineering — Information Technology</h3>
         <p class="meta">Anantrao Pawar College of Engineering and Research (APCOER), Pune</p>
         <p class="meta">2022 – 2026</p>
@@ -1185,7 +1205,7 @@
     <h2>Let's connect the tables.</h2>
     <p>Open to data analyst and BI roles — always happy to talk data modeling, dashboards, or a good SQL problem.</p>
     <div class="contact-links">
-      <a class="btn btn-primary" href="mailto:mateenmomin7840@gmail.com?subject=Portfolio%20Contact">Email Me ↗</a>
+      <a class="btn btn-primary" href="https://mail.google.com/mail/?view=cm&fs=1&to=mateenmomin7840@gmail.com&su=Portfolio%20Contact" target="_blank" rel="noopener noreferrer">Email Me ↗</a>
       <a class="btn btn-ghost" href="https://www.linkedin.com/in/mateen-momin-520120298" target="_blank" rel="noopener">LinkedIn ↗</a>
       <a class="btn btn-ghost" href="https://github.com/MateenMomin" target="_blank" rel="noopener">GitHub ↗</a>
     </div>
@@ -1379,7 +1399,11 @@ if('IntersectionObserver' in window){
   const certificateModalImage = document.getElementById('certificateModalImage');
   const certificateClose = document.getElementById('certificateClose');
 
-  function openCertificate(file, alt) {
+  function openCertificate(file, alt, type) {
+    if(type === 'pdf'){
+      window.open(file, '_blank', 'noopener,noreferrer');
+      return;
+    }
     if (!certificateModal || !certificateModalImage) return;
     certificateModalImage.src = file;
     certificateModalImage.alt = alt || 'Certificate';
@@ -1397,7 +1421,7 @@ if('IntersectionObserver' in window){
   }
 
   document.querySelectorAll('.certificate-view-btn').forEach(btn => {
-    btn.addEventListener('click', () => openCertificate(btn.dataset.certificate, btn.dataset.certAlt));
+    btn.addEventListener('click', () => openCertificate(btn.dataset.certificate, btn.dataset.certAlt, btn.dataset.certType));
   });
 
   if (certificateClose) certificateClose.addEventListener('click', closeCertificate);
