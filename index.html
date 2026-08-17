@@ -475,6 +475,13 @@
     padding:5px 10px; border-radius:20px;
   }
 
+
+  .social-btn{display:inline-flex;align-items:center;gap:9px;}
+  .social-icon{width:19px;height:19px;display:inline-flex;align-items:center;justify-content:center;flex:0 0 19px;}
+  .social-icon svg{width:19px;height:19px;display:block;fill:currentColor;}
+  .social-btn:hover .social-icon{transform:translateY(-2px) scale(1.08);}
+  .social-icon{transition:transform .2s ease;}
+
   /* contact / footer */
   footer{padding:70px 0 50px; border-top:1px solid var(--line);}
   .contact-inner{text-align:center;}
@@ -882,22 +889,6 @@
   .cert-card p{min-height:52px;}
   @media(max-width:900px){.cert-grid-full{grid-template-columns:1fr 1fr;}}
   @media(max-width:600px){.cert-grid-full{grid-template-columns:1fr;}.cert-card{min-height:0;}}
-
-/* ---------- SOCIAL ICONS ---------- */
-.contact-links .social-btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;}
-.social-icon{width:19px;height:19px;display:inline-flex;align-items:center;justify-content:center;flex:none;}
-.social-icon svg{width:100%;height:100%;display:block;fill:currentColor;}
-.social-btn:hover .social-icon{transform:translateY(-1px) scale(1.08);}
-.social-icon{transition:transform .25s ease;}
-
-/* ---------- CERTIFICATE GRID FIX ---------- */
-.cert-grid-full{display:grid !important;grid-template-columns:repeat(3,minmax(0,1fr));gap:22px;align-items:stretch;}
-.cert-grid-full .cert-card{min-width:0;display:flex;flex-direction:column;height:100%;}
-.cert-grid-full .cert-visual{height:270px;display:flex;align-items:center;justify-content:center;overflow:hidden;background:rgba(255,255,255,.025);border-radius:10px;}
-.cert-grid-full .cert-visual img{display:block;width:100%;height:100%;object-fit:contain;}
-.cert-grid-full .cert-card .btn{margin-top:auto;align-self:flex-start;}
-@media(max-width:900px){.cert-grid-full{grid-template-columns:1fr 1fr;}}
-@media(max-width:620px){.cert-grid-full{grid-template-columns:1fr;}.cert-grid-full .cert-visual{height:300px;}}
 </style>
 </head>
 <body>
@@ -928,11 +919,8 @@
       </p>
       <div class="hero-cta">
         <a class="btn btn-primary" href="#projects">View projects</a>
-        <a class="btn btn-ghost magnetic social-btn" href="https://mail.google.com/mail/?view=cm&fs=1&to=mateenmomin7840@gmail.com&su=Portfolio%20Contact" target="_blank" rel="noopener noreferrer" aria-label="Email Mateen">
-          <span class="social-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M20 4H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V6a2 2 0 0 0-2-2Zm0 4-8 5-8-5V6l8 5 8-5v2Z"/></svg></span>
-          Email Me ↗
-        </a>
-        <a class="btn btn-ghost magnetic" id="downloadCvHero" href="Mateen%20Resume.pdf" download="Mateen Resume.pdf" aria-label="Download CV">Download CV ↓</a>
+        <a class="btn btn-ghost magnetic social-btn" href="https://mail.google.com/mail/?view=cm&fs=1&to=mateenmomin7840@gmail.com&su=Portfolio%20Contact" target="_blank" rel="noopener noreferrer" aria-label="Email Mateen"><span class="social-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M20 4H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V6a2 2 2 0 0 0-2-2Zm0 4-8 5-8-5V6l8 5 8-5v2Z"/></svg></span>Email Me ↗</a>
+        <a class="btn btn-ghost magnetic" id="downloadCvHero" href="Mateen Resume.pdf" download="Mateen Resume.pdf" aria-label="Download CV">Download CV ↓</a>
       </div>
     </div>
 
@@ -1155,12 +1143,12 @@
         <p><strong>Authors:</strong> Zaid Maniyar, Adeeba Sayyed, Mateen Momin</p>
         <div class="publication-actions">
           <span class="pub-status">Published · Presented</span>
-          <button class="btn btn-ghost magnetic certificate-view-btn" type="button" data-certificate="Publication%20Certificate.jpeg" data-cert-alt="MediBrief publication certificate">View certificate ↗</button>
-          <a class="btn btn-ghost magnetic" id="researchPaperLink" aria-label="Open MediBrief research paper" href="MEDIBRIEF%20RESEARCH%20paper%202%20column%20format.pdf" target="_blank" rel="noopener">Read paper ↗</a>
+          <button class="btn btn-ghost magnetic certificate-view-btn" type="button" data-certificate="Publication Certificate.jpeg" data-cert-alt="MediBrief publication certificate">View certificate ↗</button>
+          <a class="btn btn-ghost magnetic" id="researchPaperLink" aria-label="Open MediBrief research paper" href="MEDIBRIEF RESEARCH paper 2 column format.pdf" target="_blank" rel="noopener">Read paper ↗</a>
         </div>
       </div>
       <div>
-        <a class="certificate-link" id="research-certificate" href="Publication%20Certificate.jpeg" target="_blank" rel="noopener" aria-label="Open MediBrief research certificate">
+        <a class="certificate-link" id="research-certificate" href="Publication Certificate.jpeg" target="_blank" rel="noopener" aria-label="Open MediBrief research certificate">
           <img class="certificate-preview" src="Publication Certificate.jpeg" id="researchCertificateImage" alt="MediBrief research paper conference certificate of participation">
         </a>
         <div class="publication-meta" style="margin-top:14px;">
@@ -1181,22 +1169,22 @@
     <div class="cert-grid cert-grid-full">
       <article class="cert-card magnetic-card">
         <div class="cert-visual">
-          <img src="sql_basic%20certificate%20preview.png" loading="lazy" decoding="async" alt="HackerRank SQL Basic certificate preview">
+          <img src="sql_basic certificate preview.png" loading="lazy" decoding="async" alt="HackerRank SQL Basic certificate preview">
         </div>
         <div class="cert-card-top"><span class="cert-icon">⌘</span><span class="cert-provider">HackerRank</span></div>
         <h3>SQL (Basic)</h3>
         <p>Foundational SQL certification.</p>
-        <button class="btn btn-ghost certificate-view-btn" type="button" data-certificate="sql_basic%20certificate.pdf" data-cert-type="pdf" data-cert-alt="HackerRank SQL Basic Certificate">View Certificate ↗</button>
+        <button class="btn btn-ghost certificate-view-btn" type="button" data-certificate="sql_basic certificate.pdf" data-cert-type="pdf" data-cert-alt="HackerRank SQL Basic Certificate">View Certificate ↗</button>
       </article>
 
       <article class="cert-card magnetic-card">
         <div class="cert-visual">
-          <img src="sql%20intermidiate.png" loading="lazy" decoding="async" alt="HackerRank SQL Intermediate certificate">
+          <img src="sql intermidiate.png" loading="lazy" decoding="async" alt="HackerRank SQL Intermediate certificate">
         </div>
         <div class="cert-card-top"><span class="cert-icon">⌘</span><span class="cert-provider">HackerRank</span></div>
         <h3>SQL (Intermediate)</h3>
         <p>Intermediate SQL certification.</p>
-        <button class="btn btn-ghost certificate-view-btn" type="button" data-certificate="sql%20intermidiate.png" data-cert-type="image" data-cert-alt="HackerRank SQL Intermediate Certificate">View Certificate ↗</button>
+        <button class="btn btn-ghost certificate-view-btn" type="button" data-certificate="sql intermidiate.png" data-cert-type="image" data-cert-alt="HackerRank SQL Intermediate Certificate">View Certificate ↗</button>
       </article>
 
       <article class="cert-card magnetic-card">
@@ -1226,18 +1214,9 @@
     <h2>Let's connect the tables.</h2>
     <p>Open to data analyst and BI roles — always happy to talk data modeling, dashboards, or a good SQL problem.</p>
     <div class="contact-links">
-      <a class="btn btn-primary social-btn" href="https://mail.google.com/mail/?view=cm&fs=1&to=mateenmomin7840@gmail.com&su=Portfolio%20Contact" target="_blank" rel="noopener noreferrer" aria-label="Email Mateen">
-        <span class="social-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M20 4H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V6a2 2 0 0 0-2-2Zm0 4-8 5-8-5V6l8 5 8-5v2Z"/></svg></span>
-        Email Me ↗
-      </a>
-      <a class="btn btn-ghost social-btn" href="https://www.linkedin.com/in/mateen-momin-520120298" target="_blank" rel="noopener noreferrer" aria-label="Mateen on LinkedIn">
-        <span class="social-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M6.94 8.5H3.18V20h3.76V8.5ZM5.06 3A2.18 2.18 0 1 0 5.1 7.36 2.18 2.18 0 0 0 5.06 3ZM20.82 13.41c0-3.46-1.85-5.07-4.32-5.07-1.99 0-2.88 1.1-3.38 1.87V8.5H9.36V20h3.76v-5.7c0-1.5.28-2.96 2.15-2.96 1.84 0 1.87 1.73 1.87 3.06V20h3.68v-6.59Z"/></svg></span>
-        LinkedIn ↗
-      </a>
-      <a class="btn btn-ghost social-btn" href="https://github.com/MateenMomin" target="_blank" rel="noopener noreferrer" aria-label="Mateen on GitHub">
-        <span class="social-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 .5a11.5 11.5 0 0 0-3.64 22.41c.58.11.79-.25.79-.56v-2.17c-3.22.7-3.9-1.37-3.9-1.37-.53-1.34-1.3-1.7-1.3-1.7-1.05-.72.08-.71.08-.71 1.16.08 1.77 1.2 1.77 1.2 1.03 1.77 2.7 1.26 3.36.96.1-.75.4-1.26.73-1.55-2.57-.29-5.27-1.28-5.27-5.72 0-1.27.45-2.3 1.2-3.11-.12-.29-.52-1.47.11-3.06 0 0 .98-.31 3.17 1.19A11 11 0 0 1 12 5.9c.99 0 1.99.13 2.92.39 2.19-1.5 3.17-1.19 3.17-1.19.63 1.59.23 2.77.11 3.06.75.81 1.2 1.84 1.2 3.11 0 4.45-2.7 5.42-5.28 5.71.41.36.78 1.07.78 2.16v3.2c0 .31.21.68.8.56A11.5 11.5 0 0 0 12 .5Z"/></svg></span>
-        GitHub ↗
-      </a>
+      <a class="btn btn-primary social-btn" href="https://mail.google.com/mail/?view=cm&fs=1&to=mateenmomin7840@gmail.com&su=Portfolio%20Contact" target="_blank" rel="noopener noreferrer" aria-label="Email Mateen"><span class="social-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M20 4H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V6a2 2 0 0 0-2-2Zm0 4-8 5-8-5V6l8 5 8-5v2Z"/></svg></span>Email Me ↗</a>
+      <a class="btn btn-ghost social-btn" href="https://www.linkedin.com/in/mateen-momin-520120298" target="_blank" rel="noopener" aria-label="LinkedIn"><span class="social-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M6.5 8.25H3V21h3.5V8.25ZM4.75 3A2.05 2.05 0 1 0 4.75 7.1 2.05 2.05 0 0 0 4.75 3ZM21 13.65c0-3.8-2.03-5.58-4.75-5.58-2.18 0-3.15 1.2-3.69 2.04V8.25H9.06V21h3.5v-6.3c0-1.66.31-3.27 2.37-3.27 2.03 0 2.05 1.9 2.05 3.38V21h3.5l.02-7.35Z"/></svg></span>LinkedIn ↗</a>
+      <a class="btn btn-ghost social-btn" href="https://github.com/MateenMomin" target="_blank" rel="noopener" aria-label="GitHub"><span class="social-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 .7a11.3 11.3 0 0 0-3.58 22.02c.57.1.78-.25.78-.55v-2.16c-3.17.69-3.84-1.34-3.84-1.34-.52-1.32-1.27-1.67-1.27-1.67-1.04-.71.08-.7.08-.7 1.15.08 1.76 1.18 1.76 1.18 1.02 1.75 2.67 1.24 3.32.95.1-.74.4-1.24.73-1.53-2.53-.29-5.2-1.27-5.2-5.65 0-1.25.45-2.27 1.18-3.07-.12-.29-.51-1.45.11-3.02 0 0 .96-.31 3.14 1.17a10.9 10.9 0 0 1 5.72 0c2.18-1.48 3.14-1.17 3.14-1.17.62 1.57.23 2.73.11 3.02.73.8 1.18 1.82 1.18 3.07 0 4.39-2.68 5.35-5.22 5.63.41.35.78 1.04.78 2.1v3.12c0 .3.21.66.79.55A11.3 11.3 0 0 0 12 .7Z"/></svg></span>GitHub ↗</a>
     </div>
     <div class="wrap foot-bottom">
       <span>© 2026 Mateen Momin</span>
@@ -1460,22 +1439,6 @@ if('IntersectionObserver' in window){
   });
   document.addEventListener('keydown', e => {
     if (e.key === 'Escape' && certificateModal?.classList.contains('open')) closeCertificate();
-  });
-
-  // Certificate image fallback: supports both the requested filenames and simple GitHub-safe names.
-  document.querySelectorAll('.cert-visual img').forEach(img => {
-    img.addEventListener('error', () => {
-      const fallbacks = {
-        'sql_basic%20certificate%20preview.png': 'sql-basic-preview.png',
-        'sql%20intermidiate.png': 'sql-intermediate.png'
-      };
-      const key = img.getAttribute('src').split('/').pop();
-      const fallback = fallbacks[key];
-      if (fallback && img.dataset.fallback !== '1') {
-        img.dataset.fallback = '1';
-        img.src = fallback;
-      }
-    }, {once:false});
   });
 </script>
 
